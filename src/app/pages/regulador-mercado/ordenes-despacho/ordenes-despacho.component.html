@@ -31,14 +31,14 @@
             <ng-container matColumnDef="acciones">
                 <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
                 <mat-cell *matCellDef="let element; let index = index">
-                    <button matRipple class="button-mvm-asignar" [disabled]="element.estadoSolicitud == 0 || element.estadoSolicitud == 1" matTooltip="Aceptar solicitud">
-                        <mat-icon (click)="onDespacharEnergia(element)">person_add</mat-icon>
+                    <button matRipple class="button-mvm-asignar" [disabled]="element.estadoSolicitud == 0 || element.estadoSolicitud == 1" matTooltip="Despachar energía" (click)="onDespacharEnergia(element)">
+                        <img src="../../../../assets/images/carbon_energy-renewable.svg" alt="" class="crear-planta-logo">
                     </button>
                 </mat-cell>
             </ng-container>
 
             <mat-header-row class="fadeIn" *matHeaderRowDef="displayedColumns; sticky: true "></mat-header-row>
-            <mat-row *matRowDef="let row; columns:displayedColumns "></mat-row>
+            <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
         </mat-table>
     </div>
 
