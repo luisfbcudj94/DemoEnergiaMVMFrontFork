@@ -1,0 +1,11 @@
+version: '3'
+services:
+  demodyp:
+    # container_name: Frontend_DemoMvm_Container
+    image: demodyp:v1
+    container_name: demodyp
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 80:80

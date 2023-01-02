@@ -125,9 +125,7 @@ import { InyeccionAcuerdoComponent } from './generador/inyeccion-acuerdo/inyecci
         BrowserAnimationsModule,
         NgChartsModule,
         MatIconModule,
-        MatTableModule
-
-        
+        MatTableModule        
     ],
     providers: [WinRefService, Web3ConnectService],
     exports: [
