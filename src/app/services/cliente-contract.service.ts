@@ -57,7 +57,6 @@ export class ClienteContractService extends AgenteContractService {
   getEnergiaDisponible(): Observable<number> {
     return from(this.contract?.methods.getEnergiaDisponible().call({ from: this.account })).pipe(
       map((data: string) => {
-        debugger;
         return parseInt(data)
       }),
       catchError((error) => {
@@ -113,7 +112,7 @@ export class ClienteContractService extends AgenteContractService {
   }
 
   getAcumuladoVenta(): Observable<number> {
-    return from(this.contract.methods.getAcumuladoVenta().call({ from: this.account })).pipe(
+    return from(this.contract.methods.getEnergiaGastada().call({ from: this.account })).pipe(
       map(data => data as number),
       catchError((error) => {
         return throwError(() => new Error(error.message));

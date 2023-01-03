@@ -1,34 +1,12 @@
-
-
 <div class="container container-banco-informacion" *ngIf="energiasDisponibles.length>0">
 
     <div class="mt-30 title">
         <span class="title-xg">Banco de energía</span>
     </div>
-    
-    <mat-accordion>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                                (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-                <mat-panel-title class="text-gris-p">
-                    <img src="../../../../assets/images/tipoEnergia.svg" alt="" class="mr-10">
-                    Tipo de energía
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-    
-            <div class="buttons-acordeon text-gris-p">
-                <a class="text-gris-p" (click)="changeBanco('Banco')">Energía en bolsa</a>
-                <a class="text-gris-p" (click)="changeBanco('Contratos')" >Energía en contratos</a>
-            </div>
-            
-            
-        </mat-expansion-panel>
-    </mat-accordion>
 
     <div class="container-fijar-precios">
         <button class="button-mvm" *ngIf="tipoAgente == '3'" (click)="onFijarPrecios()">Fijar precio de energía</button>
     </div>
-
 
     <div class="card-banco card-solar fadeIn">
 

@@ -59,12 +59,9 @@ export class BancoEnergiaInformacionComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-
+    if(this.energiaChangeEvent){
       this.energiaChangeEvent.removeAllListeners('data');
-  }
-
-  changeBanco(mapa){
-
+    }
   }
 
   loadPrecioVenta(){
