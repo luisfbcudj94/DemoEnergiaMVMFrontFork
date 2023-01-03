@@ -53,6 +53,15 @@
                     <mat-header-cell *matHeaderCellDef>Energía entregada</mat-header-cell>
                     <mat-cell *matCellDef="let element">{{element.cantidadEnergiaInyectada}}</mat-cell>
                 </ng-container>
+                <ng-container matColumnDef="acciones">
+                    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <button matRipple class="mvm-action-button alerta" (click)="verComprobanteEnergia(element)" matTooltip="Ver comprobante">
+                            <img src="../../../../assets/images/Registro.svg" alt="energia">
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
                 <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
                 <mat-row class="fadeIn" *matRowDef="let row; columns:displayedColumns"></mat-row>
             </mat-table>
