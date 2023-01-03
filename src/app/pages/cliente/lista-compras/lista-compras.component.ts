@@ -22,6 +22,7 @@ import { InfoEnergia } from 'src/app/models/InfoEnergia';
 import { ContratarComercializadorComponent } from '../contratar-comercializador/contratar-comercializador.component';
 import { AcuerdoEnergia, EstadoAcuerdo } from 'src/app/models/AcuerdoEnergia';
 import { AcuerdoEnergiaComponent } from '../acuerdo-energia/acuerdo-energia.component';
+import { ComprobanteAcuerdoComponent } from 'src/app/shared/comprobante-acuerdo/comprobante-acuerdo.component';
 
 @Component({
   selector: 'app-lista-compras',
@@ -31,7 +32,7 @@ import { AcuerdoEnergiaComponent } from '../acuerdo-energia/acuerdo-energia.comp
 })
 export class ListaComprasComponent implements OnInit, OnDestroy {
 
-  displayedColumns: string[] = ['empresaComercializador', 'empresaGenerador', 'estado', 'fechaInicio', 'fechaFin', 'tipoEnergia', 'energiaTotal', 'energiaEntregada']
+  displayedColumns: string[] = ['empresaComercializador', 'empresaGenerador', 'estado', 'fechaInicio', 'fechaFin', 'tipoEnergia', 'energiaTotal', 'energiaEntregada', 'acciones']
   energiasDisponibles: string[];
   dataSource: MatTableDataSource<AcuerdoEnergia>;
   @ViewChild('paginator', { static: true }) paginator: MatPaginator;
@@ -315,5 +316,14 @@ export class ListaComprasComponent implements OnInit, OnDestroy {
     }
 
     return false;
+  }
+
+  verComprobanteEnergia(dataAcuerdo: AcuerdoEnergia){
+    console.log("ABRIENDO COMPROBANTE", dataAcuerdo)
+
+    this.dialog.open(ComprobanteAcuerdoComponent, {
+      width: '540px',
+      data: dataAcuerdo
+    });
   }
 }

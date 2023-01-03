@@ -110,6 +110,7 @@ import { InyeccionAcuerdoComponent } from './generador/inyeccion-acuerdo/inyecci
         LiquidarContratoComponent,
         AcuerdosCompraComponent,
         InyeccionAcuerdoComponent,
+        
     ],
     imports: [
         CommonModule,

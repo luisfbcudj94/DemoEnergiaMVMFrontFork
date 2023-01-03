@@ -26,6 +26,7 @@ import { EstadoPlantaPipe } from './pipes/estado-planta.pipe';
 import { EstadoCompraPipe } from './pipes/estado-compra.pipe';
 import { InfoCertificadoCompraComponent } from './info-certificado-compra/info-certificado-compra.component';
 import { EstadoInyeccionPipe } from './pipes/estado-inyeccion.pipe';
+import { ComprobanteAcuerdoComponent } from './comprobante-acuerdo/comprobante-acuerdo.component';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { EstadoInyeccionPipe } from './pipes/estado-inyeccion.pipe';
         EstadoPlantaPipe,
         EstadoCompraPipe,
         InfoCertificadoCompraComponent,
-        EstadoInyeccionPipe
+        EstadoInyeccionPipe,
+        ComprobanteAcuerdoComponent
     ],
     imports: [
         CommonModule,
