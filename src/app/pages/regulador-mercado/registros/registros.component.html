@@ -14,7 +14,7 @@
             </ng-container>
             <ng-container matColumnDef="contacto">
                 <mat-header-cell *matHeaderCellDef>Contacto</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.infoContrato.contacto}}</mat-cell>
+                <mat-cell *matCellDef="let element" [matTooltip]="element.infoContrato.contacto">{{element.infoContrato.contacto|limitText:14|titlecase}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="ubicacion">
                 <mat-header-cell *matHeaderCellDef>ubicación</mat-header-cell>
