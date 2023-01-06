@@ -335,6 +335,12 @@ form .form-actions-row {
     color: var(--gris-claro);
 }
 
+.title-section-info{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .title-xg {
     font-family: 'Montserrat', Roboto, "Helvetica Neue", sans-serif !important;
     font-size: 48px !important;
@@ -972,6 +978,10 @@ form .form-actions-row {
     grid-column-gap: 3%;
     margin-bottom: 40px;
     margin-top: 50px;
+    max-width: var(--max-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
 }
 
 .container-cards .box {
@@ -1030,6 +1040,9 @@ form .form-actions-row {
     grid-template-rows: auto;
     grid-column-gap: 3%;
     justify-content: end;
+    max-width: var(--max-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .container .container-buttons .btn-show-info {
@@ -1058,6 +1071,9 @@ mat-dialog-container .mat-form-field-infix span label {
 }
 
 .container .titulo {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 30px;
 }
 
@@ -1505,7 +1521,10 @@ mat-dialog-container .mat-form-field-infix span label {
     height: calc(100vh - 65px);
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 85px 28% auto;
+    grid-template-rows: 85px 20% auto;
+    max-width: var(--max-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .container-banco-informacion .title {
@@ -1610,12 +1629,12 @@ mat-dialog-container .mat-form-field-infix span label {
 .container-agente {
     height: calc(100vh - 65px);
     display: grid;
-    grid-template-rows: 85px auto;
+    grid-template-rows: 140px auto;
 }
 
 .container-info {
     width: 70% !important;
-    min-height: 380px;
+    min-height: 335px;
     display: grid;
     grid-template-rows: 10% 60% 30%;
     grid-template-columns: 100%;
@@ -1677,7 +1696,6 @@ mat-dialog-container .mat-form-field-infix span label {
     max-width: var(--max-width);
     margin: 0px auto;
     margin-top: 84px;
-    padding-left: 54px;
     padding-right: 22px;
 }
 

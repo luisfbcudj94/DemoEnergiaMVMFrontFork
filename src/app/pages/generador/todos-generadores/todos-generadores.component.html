@@ -81,12 +81,12 @@
               
                 <ng-container matColumnDef="nombre" *ngIf="tipoMapa == 'Plantas de energía'">
                   <mat-header-cell *matHeaderCellDef>Nombre de planta</mat-header-cell>
-                  <mat-cell *matCellDef="let element">{{element.nombre}}</mat-cell>
+                  <mat-cell *matCellDef="let element" [matTooltip]="element.nombre">{{element.nombre|limitText:9|titlecase}}</mat-cell>
                 </ng-container>
   
                 <ng-container matColumnDef="ciudad" *ngIf="tipoMapa == 'Plantas de energía'">
                   <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell>
-                  <mat-cell *matCellDef="let element">{{element.ciudad}}</mat-cell>
+                  <mat-cell *matCellDef="let element" [matTooltip]="element.ciudad">{{element.ciudad|limitText:9|titlecase}}</mat-cell>
                 </ng-container>
   
                 <ng-container matColumnDef="tecnologia" *ngIf="tipoMapa == 'Plantas de energía'">
@@ -112,12 +112,12 @@
                 <!--Columnas clientes-->
                 <ng-container matColumnDef="nombre" *ngIf="tipoMapa == 'Clientes'">
                   <mat-header-cell *matHeaderCellDef>Nombre del cliente</mat-header-cell>
-                  <mat-cell *matCellDef="let element">{{element.empresa}}</mat-cell>
+                  <mat-cell *matCellDef="let element" [matTooltip]="element.empresa">{{element.empresa|limitText:15|titlecase}}</mat-cell>
                 </ng-container>
   
                 <ng-container matColumnDef="ciudad" *ngIf="tipoMapa == 'Clientes'">
                   <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell>
-                  <mat-cell *matCellDef="let element">{{element.ciudad}}</mat-cell>
+                  <mat-cell *matCellDef="let element" [matTooltip]="element.ciudad">{{element.ciudad|limitText:9|titlecase}}</mat-cell>
                 </ng-container>
                 
                 <ng-container matColumnDef="cantidadSolar" *ngIf="tipoMapa == 'Clientes'">
