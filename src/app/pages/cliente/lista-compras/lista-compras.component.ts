@@ -322,7 +322,8 @@ export class ListaComprasComponent implements OnInit, OnDestroy {
     console.log("ABRIENDO COMPROBANTE", dataAcuerdo)
 
     this.dialog.open(ComprobanteAcuerdoComponent, {
-      width: '540px',
+      panelClass: 'style-dialog',
+      width: '41.66vw',
       data: dataAcuerdo
     });
   }

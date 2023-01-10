@@ -1,14 +1,54 @@
-<h1>RESUMEN DEL ACUERDO</h1>
+<div>
+    <div class="dialgo-close-brand">
+        <img src="../../../assets/images/cerrar.svg" alt="cerrar" (click)="dialogRef.close()">
+    </div>
+    
+    <div class="certificado-acuerdo-container">
+        <div class="info-certificado-acuerdo">
+            <div class="imagenes-header">
+                <div class="images">
+                    <img src="../../../assets/images/Logo MVM.svg" alt="" class="mr-20">
+                    <img src="../../../assets/images/separator.svg" alt="" class="mr-20">
+                    <img src="../../../assets/images/logo-energy.png" alt="">
+                </div>
+                <div class="container-energia-logo">
+                    <img src="../../../assets/images/energia_renovable.svg" alt="" >
+                </div>
+                
+                
+            </div>
+    
+            <div class="container-text-principal">
+                <span>Contrato de compra de Energía celebrado entre {{this.dataAcuerdo.dataCliente.nombreAgente}} y {{this.dataAcuerdo.dataGenerador.nombreAgente}}, generada con fuentes renovables de energía.</span>
+            </div>
+    
+            <div class="container-text-secundario">
+                <span>Se resume que a través de su comercializador "{{this.dataAcuerdo.dataComercializador.nombreAgente}}" ha comprado en el mercado de energía renovable desde el día {{this.dataAcuerdo.fechaInicio}} hasta {{this.dataAcuerdo.fechaFin}},  un total de {{this.dataAcuerdo.cantidadEnergiaTotal}} Mw de energía {{this.dataAcuerdo.tipoEnergia}}</span>
+            </div>
+    
+            <div class="container-tokens">
+                <span>Valor del contrato {{this.dataAcuerdo.valorContrato}} Tokens</span>
+            </div>
+    
+            <div class="container-masInfo">
+                <span>Para conocer el detalle del contrato consultar en echain.com/#34FG%)</span>
+            </div>
+    
+            <div class="container-firmas">
+                <div>
+                    <img src="../../../assets/images/firmas.svg" alt="">
+                    <span>Ricardo Gallego Director técnico y comercial</span>
+                </div>
 
-<p>Nombre del cliente: {{this.dataAcuerdo.dataCliente.nombreAgente}}</p>
-<p>Nombre del comercializador: {{this.dataAcuerdo.dataComercializador.nombreAgente}}</p>
-<p>Nombre del generador: {{this.dataAcuerdo.dataGenerador.nombreAgente}}</p>
-<p>Tipo de energía: {{this.dataAcuerdo.tipoEnergia}}</p>
-<p>Cantidad de energía total: {{this.dataAcuerdo.cantidadEnergiaTotal}}</p>
-<p>Cantidad de energía inyectada: {{this.dataAcuerdo.cantidadEnergiaInyectada}}</p>
-<p>Fecha de solicitud: {{this.dataAcuerdo.fechaSolicitud}}</p>
-<p>Fecha inicio: {{this.dataAcuerdo.fechaInicio}}</p>
-<p>Fecha de fin: {{this.dataAcuerdo.fechaFin}}</p>
-<p>Estado del acuerdo: {{this.dataAcuerdo.estadoAcuerdo}}</p>
-<p>Valor del contrato: {{this.dataAcuerdo.valorContrato}}</p>
+                <div>
+                    <img src="../../../assets/images/firmas.svg" alt="">
+                    <span>Ricardo Gallego Director técnico y comercial</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 

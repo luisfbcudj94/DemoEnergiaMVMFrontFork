@@ -2245,6 +2245,114 @@ mat-dialog-container .mat-form-field-infix span label {
     font-size: 13px;
 }
 
+.certificado-acuerdo-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    border-width: 8px;
+    border-style: solid;
+    border-image: linear-gradient(116.7deg, #C2D500 1.58%, #4C9C2E 98.7%) 1;
+    max-width: 922px !important;
+    min-width: 743px;
+    height: 50.87vh;
+    max-height: 550px;
+    min-height: 438px;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 20% 20% 15% 7%;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .imagenes-header{
+    display: grid;
+    grid-template-columns: 100% auto;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .imagenes-header .images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .imagenes-header .container-energia-logo{
+    position: relative;
+    right: 89px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-text-principal,.container-text-secundario,.container-tokens,.container-masInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-text-principal span{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 29px;
+    text-align: center;
+    color: #4C9C2E;
+    width: 90%;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-tokens span{
+    background: #C2D500;
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-text-secundario span{
+    width: 80%;
+    text-align: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-firmas{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: center;
+    grid-gap: 12%;
+    justify-items: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-firmas div{
+    display: grid;
+    width: 70%;
+    justify-items: center;
+    text-align: center;
+}
+
+.certificado-acuerdo-container .info-certificado-acuerdo .container-firmas div span{
+    font-size: 12px;
+}
+
+
+
+
+
+
+.style-dialog{
+    margin-left: 234px;
+    max-width: 922px !important;
+    min-width: 790px;
+    height: 57.87vh;
+    max-height: 625px;
+    min-height: 530px;
+}
+
 
 /* Mobile size */
 
