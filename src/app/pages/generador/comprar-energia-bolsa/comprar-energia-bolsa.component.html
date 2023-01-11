@@ -4,17 +4,17 @@
     </div>
     <div class="modal-header-mvm">
         <img src="../../../../assets/images/Energia-green.svg" alt="energia">
-        <h2 class="modal-title-mvm mt-20">Comprar energia en bolsa</h2>
+        <h2 class="modal-title-mvm mt-20">Comprar energía en bolsa</h2>
     </div>
     <form [formGroup]="comprarEnergiaForm">
         <div class="row">
             <div class="col">
                 <div class="form-field">
-                    <label>Tipo de energia</label>
+                    <label>Tipo de energía</label>
                     <select class="custom-select" formControlName="tipoEnergia">
                         <option [value]=""></option>
                         <option *ngFor="let tipoEnergia of tiposEnergia" [ngValue]="tipoEnergia">
-                            {{tipoEnergia.nombre}}
+                            {{tipoEnergia.nombre == 'eolica' ? ('Eólica') : (tipoEnergia.nombre == 'solar' ? ('Solar') : (''))}}
                         </option>
                     </select>
                 </div>
@@ -23,7 +23,7 @@
         <div class="row mt-20">
             <div class="col">
                 <div class="form-field">
-                    <label>Cantidad de energia</label>
+                    <label>Cantidad de energía</label>
                     <input formControlName="cantidadEnergia" type="number">
                 </div>
             </div>

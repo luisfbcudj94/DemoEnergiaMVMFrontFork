@@ -1,6 +1,6 @@
 <div class="container">
     <div class="titulo">
-        <h2 class="title-xg">Acuerdos de energia clientes</h2>
+        <h2 class="title-xg">Acuerdos de energía clientes</h2>
     </div>
     <app-filter *ngIf="filterFormProperties.length>0" [rowsForm]="filterFormProperties" (onfieldValueChange)="onfieldValueChange($event)"></app-filter>
 
@@ -27,8 +27,8 @@
                 <mat-cell *matCellDef="let element">{{element.fechaFin}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="tipoEnergia">
-                <mat-header-cell *matHeaderCellDef>Tipo de energia</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.tipoEnergia}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>Tipo de energía</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.tipoEnergia == 'eolica' ? ('Eólica') : (element.tipoEnergia == 'solar' ? ('Solar') : (''))}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="energiaTotal">
                 <mat-header-cell *matHeaderCellDef class="celda-110">Energía total</mat-header-cell>
@@ -41,7 +41,7 @@
             <ng-container matColumnDef="acciones">
                 <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <button matRipple class="mvm-action-button approve" matTooltip="Inyectar energia contrato" (click)="onInyectarEnergiaContrato(element)" [disabled]="element.estadoAcuerdo !== 1">
+                    <button matRipple class="mvm-action-button approve" matTooltip="Inyectar energía contrato" (click)="onInyectarEnergiaContrato(element)" [disabled]="element.estadoAcuerdo !== 1">
                         <mat-icon>done</mat-icon>
                     </button>
                 </mat-cell>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="totalesContainer" *ngFor="let energia of energiaBolsaGenerador">
-        <p class="total">Total energía {{energia.nombre}} para contratos</p>
+        <p class="total">Total energía {{energia.nombre == 'eolica' ? ('Eólica') : (energia.nombre == 'solar' ? ('Solar') : (''))}} para contratos</p>
         <p class="resultado">{{energia.cantidadEnergia}} Mw</p>
     </div>
 

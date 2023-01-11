@@ -28,7 +28,7 @@
                     <label>Tipo de Energía</label>
                     <select class="custom-select" formControlName="tipoEnergia">
                         <option [value]=""></option>
-                        <option *ngFor="let tipoEnergia of tiposEnergia" [value]="tipoEnergia.nombre">{{tipoEnergia.nombre}}</option>
+                        <option *ngFor="let tipoEnergia of tiposEnergia" [value]="tipoEnergia.nombre">{{tipoEnergia.nombre == 'eolica' ? ('Eólica') : (tipoEnergia.nombre == 'solar' ? ('Solar') : (''))}}</option>
                     </select>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
             <ng-container matColumnDef="TipoEnergia">
                 <mat-header-cell *matHeaderCellDef>Tipo de Energía</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.tipoEnergia}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.tipoEnergia == 'eolica' ? ('Eólica') : (element.tipoEnergia == 'solar' ? ('Solar') : (''))}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="CantidadEnergia">

@@ -178,7 +178,7 @@ export class AcuerdosEnergiaComponent implements OnInit, OnDestroy {
         controlType: 'date',
         pipe: ''
       }, {
-        label: 'Tipo de energia',
+        label: 'Tipo de energía',
         formControlName: 'tipoEnergia',
         controlType: 'select',
         optionValues: this.energiasDisponibles,

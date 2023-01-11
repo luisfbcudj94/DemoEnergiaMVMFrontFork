@@ -1,6 +1,6 @@
 <div class="container">
     <div class="titulo">
-        <h2 class="title-xg">Acuerdos de energia</h2>
+        <h2 class="title-xg">Acuerdos de energía</h2>
     </div>
 
     <app-filter *ngIf="filterFormProperties.length>0" [rowsForm]="filterFormProperties" (onfieldValueChange)="onfieldValueChange($event)"></app-filter>
@@ -32,8 +32,8 @@
                 <mat-cell *matCellDef="let element">{{element.fechaFin}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="tipoEnergia">
-                <mat-header-cell *matHeaderCellDef class="celda-70M">Tipo de energia</mat-header-cell>
-                <mat-cell *matCellDef="let element" class="celda-70M">{{element.tipoEnergia}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef class="celda-60M">Tipo de energía</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="celda-60M">{{element.tipoEnergia == 'eolica' ? ('Eólica') : (element.tipoEnergia == 'solar' ? ('Solar') : (''))}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="energiaTotal">
                 <mat-header-cell *matHeaderCellDef class="celda-75M">Energía total</mat-header-cell>
