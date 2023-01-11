@@ -75,7 +75,7 @@ export class OrdenesDespachoComponent implements OnInit, OnDestroy {
         controlType: 'number',
         pipe: ''
       }, {
-        label: 'Energia Despachada (Mw)',
+        label: 'Energía Despachada (Mw)',
         formControlName: 'energiaDespachada',
         controlType: 'number',
         pipe: ''
@@ -216,7 +216,7 @@ export class OrdenesDespachoComponent implements OnInit, OnDestroy {
   }
 
   onDespacharEnergia(ordenDespacho: OrdenDespacho) {
-    this.sweetAlert.confirmAlert('Despacho de energia', `¿Deseas despachar ${ordenDespacho.cantidadEnergia}Mw al generador ${ordenDespacho.nombreGenerador}`).then(result => {
+    this.sweetAlert.confirmAlert('Despacho de energía', `¿Deseas despachar ${ordenDespacho.cantidadEnergia}Mw al generador ${ordenDespacho.nombreGenerador}`).then(result => {
       if (result.isConfirmed) {
         this.spinner.show();
         if (ordenDespacho.index == null) {

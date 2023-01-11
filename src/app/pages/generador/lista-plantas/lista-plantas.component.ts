@@ -97,7 +97,7 @@ export class ListaPlantasComponent implements OnInit, OnDestroy {
       }]
     }, {
       fields: [{
-        label: ' Tecnologia de la planta',
+        label: ' Tecnología de la planta',
         formControlName: 'tipoEnergia',
         controlType: 'select',
         pipe: '',

@@ -1443,6 +1443,10 @@ mat-dialog-container .mat-form-field-infix span label {
     word-break:break-all;
 }
 
+.celda-60M{
+    max-width: 60px !important;
+}
+
 .celda-70M{
     max-width: 70px !important;
 }

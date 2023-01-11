@@ -10,7 +10,7 @@
                 <select class="custom-select" *ngIf="control.controlType == 'select'" [formControlName]="control.formControlName">
                     <option [value]=""></option>
                     <option *ngFor="let optionValue of control.optionValues" [value]="optionValue">
-                        <p *ngIf="control.pipe === ''">{{optionValue}}</p>
+                        <p *ngIf="control.pipe === ''">{{optionValue == 'eolica' ? ('Eólica') : (optionValue == 'solar' ? ('Solar') : (''))}}</p>
                         <p *ngIf="control.pipe === 'estadoRegistro'">{{optionValue|estadoRegistro}}</p>
                         <p *ngIf="control.pipe === 'tipoContrato'">{{optionValue|tipoContrato}}</p>
                         <p *ngIf="control.pipe === 'tipoTransaccion'">{{optionValue|tipoTransaccion}}</p>

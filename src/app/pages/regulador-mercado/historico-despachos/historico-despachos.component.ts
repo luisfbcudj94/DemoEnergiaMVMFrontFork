@@ -65,13 +65,13 @@ export class HistoricoDespachosComponent implements OnInit, OnDestroy {
       }]
     }, {
       fields: [{
-        label: 'Energia Despachada (Mw)',
+        label: 'Energía Despachada (Mw)',
         formControlName: 'energiaDespachada',
         controlType: 'number',
         pipe: ''
       },
       {
-        label: 'Energia Inyectada (Mw)',
+        label: 'Energía Inyectada (Mw)',
         formControlName: 'energiaEntregada',
         controlType: 'number',
         pipe: ''

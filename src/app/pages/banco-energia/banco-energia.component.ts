@@ -340,6 +340,7 @@ export class BancoEnergiaComponent implements OnInit, OnDestroy, AfterViewInit {
             hoverBorderColor: ['#4C9C2E', '#C2D500']
           }]
         }
+        
 
         this.charts.find(item => item.type === 'pie').update();
       },
