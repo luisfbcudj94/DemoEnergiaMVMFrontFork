@@ -19,15 +19,15 @@
             </div>
     
             <div class="container-text-principal">
-                <span>Contrato de compra de Energía celebrado entre {{this.dataAcuerdo.dataCliente.nombreAgente}} y {{this.dataAcuerdo.dataGenerador.nombreAgente}}, generada con fuentes renovables de energía.</span>
+                <span>Contrato de compra de Energía celebrado entre {{this.dataAcuerdo[0].dataCliente.nombreAgente}} y {{this.dataAcuerdo[0].dataGenerador.nombreAgente}}, generada con fuentes renovables de energía.</span>
             </div>
     
             <div class="container-text-secundario">
-                <span>Se resume que a través de su comercializador "{{this.dataAcuerdo.dataComercializador.nombreAgente}}" ha comprado en el mercado de energía renovable desde el día {{this.dataAcuerdo.fechaInicio}} hasta {{this.dataAcuerdo.fechaFin}},  un total de {{this.dataAcuerdo.cantidadEnergiaTotal}} Mw de energía {{this.dataAcuerdo.tipoEnergia}}</span>
+                <span>Se resume que a través de su comercializador "{{this.dataAcuerdo[0].dataComercializador.nombreAgente}}" ha comprado en el mercado de energía renovable desde el día {{this.dataAcuerdo[0].fechaInicio}} hasta {{this.dataAcuerdo.fechaFin}},  un total de {{this.dataAcuerdo[0].cantidadEnergiaTotal}} Mw de energía {{this.dataAcuerdo[0].tipoEnergia}}</span>
             </div>
     
             <div class="container-tokens">
-                <span>Valor del contrato {{this.dataAcuerdo.valorContrato}} Tokens</span>
+                <span>Valor del contrato {{this.dataAcuerdo[0].valorContrato}} Tokens</span>
             </div>
     
             <div class="container-masInfo">
@@ -37,12 +37,14 @@
             <div class="container-firmas">
                 <div>
                     <img src="../../../assets/images/firmas.svg" alt="">
-                    <span>Ricardo Gallego Director técnico y comercial</span>
+                    <span>{{this.dataAcuerdo[1].contactoCliente}}</span>
+                    <span>Representante legal de {{this.dataAcuerdo[0].dataCliente.nombreAgente}}</span>
                 </div>
 
                 <div>
                     <img src="../../../assets/images/firmas.svg" alt="">
-                    <span>Ricardo Gallego Director técnico y comercial</span>
+                    <span>{{this.dataAcuerdo[1].contactoGenerador}}</span>
+                    <span>Representante legal de {{this.dataAcuerdo[0].dataGenerador.nombreAgente}}</span>
                 </div>
             </div>
         </div>

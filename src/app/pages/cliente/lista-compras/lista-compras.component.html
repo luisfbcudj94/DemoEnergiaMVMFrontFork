@@ -61,7 +61,7 @@
                 <ng-container matColumnDef="acciones">
                     <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
                     <mat-cell *matCellDef="let element">
-                        <button matRipple class="mvm-action-button alerta" (click)="verComprobanteEnergia(element)" matTooltip="Ver acuerdo">
+                        <button matRipple class="mvm-action-button alerta" (click)="verComprobanteEnergia(element)" matTooltip="Ver acuerdo" [disabled]="!element.estadoAcuerdo">
                             <mat-icon>remove_red_eye</mat-icon>
                         </button>
                     </mat-cell>
