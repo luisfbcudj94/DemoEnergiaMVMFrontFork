@@ -23,6 +23,7 @@ import { ContratarComercializadorComponent } from '../contratar-comercializador/
 import { AcuerdoEnergia, EstadoAcuerdo } from 'src/app/models/AcuerdoEnergia';
 import { AcuerdoEnergiaComponent } from '../acuerdo-energia/acuerdo-energia.component';
 import { ComprobanteAcuerdoComponent } from 'src/app/shared/comprobante-acuerdo/comprobante-acuerdo.component';
+import { GeneradorContractService } from 'src/app/services/generador-contract.service';
 
 @Component({
   selector: 'app-lista-compras',
@@ -32,12 +33,16 @@ import { ComprobanteAcuerdoComponent } from 'src/app/shared/comprobante-acuerdo/
 })
 export class ListaComprasComponent implements OnInit, OnDestroy {
 
+
   displayedColumns: string[] = ['empresaComercializador', 'empresaGenerador', 'estado', 'fechaInicio', 'fechaFin', 'tipoEnergia', 'energiaTotal', 'energiaEntregada', 'acciones']
   energiasDisponibles: string[];
   dataSource: MatTableDataSource<AcuerdoEnergia>;
   @ViewChild('paginator', { static: true }) paginator: MatPaginator;
   @ViewChild('table', { static: true }) table: MatTable<any>;
   sort: MatSort;
+
+  contactoCliente = '';
+  contactoGenerador = '';
 
   filterFormProperties: RowFilterForm[] = [];
   compraEnergiaEvent: any;
@@ -57,6 +62,7 @@ export class ListaComprasComponent implements OnInit, OnDestroy {
   actualizacionContratoEvent: any;
 
   constructor(private bancoEnergia: BancoEnergiaService,
+    private generadorService: GeneradorContractService,
     private cliente: ClienteContractService,
     private reguladorMercado: ReguladorMercadoService,
     private acuerdosLedger: AcuerdoContractService,
@@ -87,6 +93,7 @@ export class ListaComprasComponent implements OnInit, OnDestroy {
       promises.push(this.bancoEnergia.loadBlockChainContractData());
       promises.push(this.acuerdosLedger.loadBlockChainContractData());
       promises.push(this.cliente.loadBlockChainContractData(dirContract));
+      
       await Promise.all(promises);
       this.spinner.hide();
 
@@ -302,6 +309,8 @@ export class ListaComprasComponent implements OnInit, OnDestroy {
         this.getComprasCliente(this.infoCliente.dirContrato);
         this.setFilterForm();
         this.spinner.hide();
+        console.log("THIS DATA: ",data)
+        this.contactoCliente = data[0].contacto;
       }, error: (error) => {
         console.log(error);
         this.toastr.error(error.message, 'Error');
@@ -320,11 +329,14 @@ export class ListaComprasComponent implements OnInit, OnDestroy {
 
   verComprobanteEnergia(dataAcuerdo: AcuerdoEnergia){
     console.log("ABRIENDO COMPROBANTE", dataAcuerdo)
-
+    let dataComplete: any[] = [];
+    dataComplete.push(dataAcuerdo)
+    dataComplete.push({contactoCliente: this.contactoCliente,
+                        contactoGenerador:""})
     this.dialog.open(ComprobanteAcuerdoComponent, {
       panelClass: 'style-dialog',
       width: '41.66vw',
-      data: dataAcuerdo
+      data: dataComplete
     });
   }
 }
