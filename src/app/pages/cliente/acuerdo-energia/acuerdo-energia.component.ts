@@ -18,6 +18,9 @@ export class AcuerdoEnergiaComponent implements OnInit {
   tokensDelegados: number;
   comprarEnergiaForm: FormGroup
   tiposEnergia: InfoEnergia[] = [];
+  cantidadCompra: number = 0;
+  infoEnergia: string = '';
+  fechaFin: string = 'Invalid date';
 
   constructor(public dialogRef: MatDialogRef<AcuerdoEnergiaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -61,6 +64,16 @@ export class AcuerdoEnergiaComponent implements OnInit {
       cantidadEnergia: ['', Validators.required],
       fechaFin: ['', Validators.required]
     });
+
+    this.comprarEnergiaForm.get('tipoEnergia').valueChanges.subscribe((data: string) => {
+      this.infoEnergia = data;
+    });
+    this.comprarEnergiaForm.get('cantidadEnergia').valueChanges.subscribe((data: string) => {
+      this.cantidadCompra = data !== '' ? parseInt(data) : 0;
+    });
+    this.comprarEnergiaForm.get('fechaFin').valueChanges.subscribe((data: string) => {
+      this.fechaFin = data !== '' && data !== undefined ? moment(data).format('DD/MM/YYYY') : 'Invalid date';
+    });
   }
 
   onComprarEnergia() {
@@ -71,9 +84,6 @@ export class AcuerdoEnergiaComponent implements OnInit {
           let infoEnergia = this.comprarEnergiaForm.get('tipoEnergia').value as InfoEnergia;
           let cantidadEnergia = this.comprarEnergiaForm.get('cantidadEnergia').value;
           let fechaFin = moment(this.comprarEnergiaForm.get('fechaFin').value, 'YYYY-MM-DD').hour(23).minute(59).second(59);
-          console.log("infoEnergia: ", infoEnergia);
-          console.log("cantidadEnergia: ", cantidadEnergia);
-          console.log("fechaFin: ", fechaFin);
           this.clienteService.postComprarEnergia(infoEnergia.nombre, cantidadEnergia, fechaFin.unix()).subscribe({
             next: () => {
               this.spinner.hide();
@@ -93,10 +103,7 @@ export class AcuerdoEnergiaComponent implements OnInit {
   }
 
   get isComprarValid(): boolean {
-    let cantidadCompra = this.comprarEnergiaForm.get('cantidadEnergia').value;
-    let valorCompra = this.comprarEnergiaForm.get('valorCompra').value;
-    let infoEnergia = this.comprarEnergiaForm.get('tipoEnergia').value as InfoEnergia;
-    return this.comprarEnergiaForm.valid && valorCompra <= this.data.tokensDelegados && cantidadCompra <= infoEnergia.cantidadEnergia;
+    return this.cantidadCompra > 0 && this.infoEnergia !== '' && this.fechaFin !== 'Invalid date' ? true : false;
   }
 }
 
